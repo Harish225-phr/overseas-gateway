@@ -42,14 +42,6 @@ const Index = () => {
         <FAQ />
         <Contact />
       </main>
-        <Services />
-        <WhyChooseUs />
-        <Process />
-        <Countries />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-      </main>
       <Footer />
       <FloatingActions />
     </div>
