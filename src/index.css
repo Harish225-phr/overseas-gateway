@@ -129,4 +129,60 @@
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .transition-smooth { transition: var(--transition-smooth); }
   .transition-bounce { transition: var(--transition-bounce); }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .reveal-left { transform: translateX(-60px); }
+  .reveal-left.in-view { transform: translateX(0); }
+  .reveal-right { transform: translateX(60px); }
+  .reveal-right.in-view { transform: translateX(0); }
+  .reveal-zoom { transform: scale(0.9); }
+  .reveal-zoom.in-view { transform: scale(1); }
+
+  /* Card 3D tilt + shine */
+  .card-shine { position: relative; overflow: hidden; }
+  .card-shine::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(115deg, transparent 30%, hsl(var(--accent) / 0.18) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+    pointer-events: none;
+  }
+  .card-shine:hover::before { transform: translateX(100%); }
+
+  /* Gradient text shimmer */
+  .text-shimmer {
+    background: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--accent-glow)) 25%, hsl(var(--accent)) 50%, hsl(var(--accent-glow)) 75%, hsl(var(--accent)) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Marquee */
+  .marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+
+  /* Hover lift */
+  .hover-lift { transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s; }
+  .hover-lift:hover { transform: translateY(-8px); }
+
+  /* Background blobs */
+  .blob { filter: blur(60px); opacity: 0.35; border-radius: 50%; position: absolute; pointer-events: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-left, .reveal-right, .reveal-zoom { opacity: 1 !important; transform: none !important; }
+    .animate-float, .animate-blob, .animate-marquee, .animate-spin-slow, .animate-ken-burns, .animate-tilt { animation: none !important; }
+  }
 }

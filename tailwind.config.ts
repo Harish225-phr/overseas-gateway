@@ -96,6 +96,43 @@ export default {
           "0%, 100%": { boxShadow: "0 0 0 0 hsl(44 65% 52% / 0.7)" },
           "50%": { boxShadow: "0 0 0 15px hsl(44 65% 52% / 0)" },
         },
+        "slide-in-left": {
+          "0%": { opacity: "0", transform: "translateX(-60px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "slide-in-right": {
+          "0%": { opacity: "0", transform: "translateX(60px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "zoom-fade": {
+          "0%": { opacity: "0", transform: "scale(0.85)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        "marquee": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        "tilt": {
+          "0%, 100%": { transform: "rotate(-1deg)" },
+          "50%": { transform: "rotate(1deg)" },
+        },
+        "blob": {
+          "0%, 100%": { transform: "translate(0,0) scale(1)" },
+          "33%": { transform: "translate(30px,-40px) scale(1.1)" },
+          "66%": { transform: "translate(-20px,20px) scale(0.95)" },
+        },
+        "ken-burns": {
+          "0%": { transform: "scale(1) translate(0,0)" },
+          "100%": { transform: "scale(1.15) translate(-1.5%, -1.5%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -105,6 +142,15 @@ export default {
         "scale-in": "scale-in 0.5s ease-out",
         "float": "float 3s ease-in-out infinite",
         "pulse-gold": "pulse-gold 2s infinite",
+        "slide-in-left": "slide-in-left 0.7s ease-out both",
+        "slide-in-right": "slide-in-right 0.7s ease-out both",
+        "zoom-fade": "zoom-fade 0.6s ease-out both",
+        "marquee": "marquee 30s linear infinite",
+        "spin-slow": "spin-slow 18s linear infinite",
+        "shimmer": "shimmer 2.5s linear infinite",
+        "tilt": "tilt 6s ease-in-out infinite",
+        "blob": "blob 14s ease-in-out infinite",
+        "ken-burns": "ken-burns 18s ease-out infinite alternate",
       },
     },
   },
