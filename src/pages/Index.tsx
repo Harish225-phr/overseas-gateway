@@ -10,6 +10,7 @@ import FAQ from "@/components/site/FAQ";
 import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 import FloatingActions from "@/components/site/FloatingActions";
+import Marquee from "@/components/site/Marquee";
 
 const Index = () => {
   const orgJsonLd = {
@@ -31,7 +32,16 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <About />
+        <Services />
+        <WhyChooseUs />
+        <Process />
+        <Countries />
+        <Testimonials />
+        <FAQ />
+        <Contact />
+      </main>
         <Services />
         <WhyChooseUs />
         <Process />

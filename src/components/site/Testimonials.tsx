@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import Reveal from "./Reveal";
 
 const testimonials = [
   {
@@ -26,44 +27,44 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-14 animate-fade-in">
-          <span className="inline-block text-accent font-semibold uppercase tracking-widest text-sm mb-3">
-            Testimonials
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
-            Success Stories from Our Clients
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Real people. Real visas. Real success.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="inline-block text-accent font-semibold uppercase tracking-widest text-sm mb-3">
+              Testimonials
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
+              Success Stories from Our Clients
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Real people. Real visas. Real success.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <div
-              key={t.name}
-              className="relative bg-card rounded-2xl p-7 border border-border shadow-soft hover:shadow-elegant hover:border-accent transition-smooth animate-fade-in-up"
-              style={{ animationDelay: `${i * 0.15}s`, animationFillMode: "both" }}
-            >
-              <Quote className="absolute top-6 right-6 w-10 h-10 text-accent/15" />
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: t.rating }).map((_, idx) => (
-                  <Star key={idx} className="w-4 h-4 fill-accent text-accent" />
-                ))}
-              </div>
-              <p className="text-foreground leading-relaxed mb-6 text-sm">"{t.text}"</p>
-              <div className="flex items-center gap-3 pt-4 border-t border-border">
-                <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center text-primary-foreground font-display font-bold">
-                  {t.initials}
+            <Reveal key={t.name} variant={i === 0 ? "left" : i === 2 ? "right" : "up"} delay={i * 150}>
+              <div className="card-shine relative bg-card rounded-2xl p-7 border border-border shadow-soft hover:shadow-elegant hover:border-accent hover:-translate-y-2 transition-bounce h-full">
+                <Quote className="absolute top-6 right-6 w-10 h-10 text-accent/15" />
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: t.rating }).map((_, idx) => (
+                    <Star key={idx} className="w-4 h-4 fill-accent text-accent" />
+                  ))}
                 </div>
-                <div>
-                  <div className="font-display font-semibold text-primary">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                <p className="text-foreground leading-relaxed mb-6 text-sm">"{t.text}"</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                  <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center text-primary-foreground font-display font-bold">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <div className="font-display font-semibold text-primary">{t.name}</div>
+                    <div className="text-xs text-muted-foreground">{t.role}</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
