@@ -1,4 +1,4 @@
-const countries = [
+import Reveal from "./Reveal";
   { name: "Canada", flag: "🇨🇦", desc: "PR, Study & Work" },
   { name: "Australia", flag: "🇦🇺", desc: "Skilled Migration" },
   { name: "United Kingdom", flag: "🇬🇧", desc: "Student & Work" },
