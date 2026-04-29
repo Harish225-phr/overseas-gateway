@@ -1,4 +1,6 @@
 import Reveal from "./Reveal";
+
+const countries = [
   { name: "Canada", flag: "🇨🇦", desc: "PR, Study & Work" },
   { name: "Australia", flag: "🇦🇺", desc: "Skilled Migration" },
   { name: "United Kingdom", flag: "🇬🇧", desc: "Student & Work" },
